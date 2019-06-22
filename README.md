@@ -1,2 +1,2 @@
-# ouroboros-env
+# Snakeskin
 Environment for Ouroboros
