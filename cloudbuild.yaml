@@ -53,17 +53,17 @@ steps:
   - '-c'
   - |
     set -x && \
+    git remote add github git@github.com:tamuhack-org/snakeskin && \
     # Configure Git to create commits with TAMUhack staging
     git config user.email tamuhack.staging@gmail.com && \
     # Switch to the production branch and copy the kubernetes.yaml file from the candidate branch
-    git fetch origin production && git checkout production && \
+    git fetch github production && git checkout production && \
     git checkout $COMMIT_SHA kubernetes.yaml && \
     # Commit the kubernetes.yaml file with a descriptive commit message
     git commit -m "Manifest from commit $COMMIT_SHA
     $(git log --format=%B -n 1 $COMMIT_SHA)" && \
-    # Push the changes back to Cloud Source Repository
-    # git push origin production
-    git remote -v
+    # Push the changes back to GitHub
+    git push github production
   volumes:
   - name: 'ssh'
     path: /root/.ssh
