@@ -14,7 +14,7 @@ spec:
       containers:
       - name: ouroboros-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-staging/ouroboros:3690484
+        image: gcr.io/tamuhack-staging/ouroboros:0f164c6
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
@@ -38,7 +38,7 @@ spec:
                 name: sendgrid
                 key: apikey
           - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: "/etc/storage-creds/django-storage-creds.json"
+            value: "/etc/storage-creds/django-storages-creds.json"
         volumeMounts:
           - name: django-storage-credentials
             mountPath: /etc/storage-creds
