@@ -14,7 +14,7 @@ spec:
       containers:
       - name: ouroboros-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-staging/ouroboros:c4e9bb3
+        image: gcr.io/tamuhack-staging/ouroboros:93abb94
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
@@ -38,9 +38,10 @@ spec:
                 name: sendgrid
                 key: apikey
           - name: GOOGLE_APPLICATION_CREDENTIALS
-            valueFrom:
-              secretKeyRef:
-                name: django-storages-creds
+            value: "/etc/django-storage-creds.json"
+          volumeMounts:
+            - name: django-storage-credentials
+              mountPath: /etc/django-storage-creds.json
         ports:
         - containerPort: 8080
       - image: gcr.io/cloudsql-docker/gce-proxy:1.05
