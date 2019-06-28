@@ -14,7 +14,7 @@ spec:
       containers:
       - name: ouroboros-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-staging/ouroboros:3804f4c
+        image: gcr.io/tamuhack-staging/ouroboros:d0e11a5
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
@@ -45,10 +45,13 @@ spec:
             readOnly: true
         ports:
         - containerPort: 8080
+        - name: liveness-port
+          containerPort: 8080
+          hostPort: 8080
         livenessProbe:
           httpGet:
             path: /healthy/
-            port: containerPort
+            port: liveness-port
       - image: gcr.io/cloudsql-docker/gce-proxy:1.05
         name: cloudsql-proxy
         command: ["/cloud_sql_proxy", "--dir=/cloudsql",
