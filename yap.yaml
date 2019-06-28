@@ -1,0 +1,21 @@
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: yap-certificate
+spec:
+  domains:
+    - pango.li
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: yap-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name:  yap-url
+    networking.gke.io/managed-certificates: yap-certificate
+spec:
+  backend:
+    serviceName: ouroboros-nodeport-service
+    servicePort: 80
