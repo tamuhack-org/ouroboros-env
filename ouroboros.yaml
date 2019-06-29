@@ -14,7 +14,7 @@ spec:
       containers:
       - name: ouroboros-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-staging/ouroboros:f2e994f
+        image: gcr.io/tamuhack-staging/ouroboros:ca353ce
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
@@ -45,10 +45,10 @@ spec:
             readOnly: true
         ports:
         - containerPort: 8080
-        - name: readiness-port
+        - name: liveness-port
           containerPort: 8080
           hostPort: 8080
-        readinessProbe:
+        livenessProbe:
           httpGet:
             path: /healthy/
             port: liveness-port
