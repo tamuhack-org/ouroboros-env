@@ -17,6 +17,18 @@ metadata:
     networking.gke.io/managed-certificates: yap-certificate
     kubernetes.io/ingress.allow-http: "false"
 spec:
-  backend:
-    serviceName: ouroboros-nodeport-service
-    servicePort: 9000
+  rules:
+  - host: register.pango.li
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: ouroboros-nodeport-service
+            servicePort: 9000
+  - host: pango.li
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: moo-nodeport-service
+            servicePort: 9001
