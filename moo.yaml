@@ -14,7 +14,7 @@ spec:
       containers:
       - name: moo-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-staging/moo:5e726dc
+        image: gcr.io/tamuhack-staging/moo:8e53914
         ports:
         - containerPort: 3000
         livenessProbe:
