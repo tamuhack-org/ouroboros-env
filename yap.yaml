@@ -15,8 +15,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name:  yap-url
     networking.gke.io/managed-certificates: yap-certificate
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
   - host: register.pango.li
