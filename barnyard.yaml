@@ -6,13 +6,13 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name:  barnyard-url
 spec:
   rules:
-  - host: register.pango.li
+  - host: register.tamuhack.com
     http:
       paths:
       - backend:
           serviceName: ouroboros-nodeport-service
           servicePort: 9000
-  - host: pango.li
+  - host: tamuhack.com
     http:
       paths:
       - backend:
