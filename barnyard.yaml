@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: yap-ingress
+  name: barnyard-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name:  yap-url
+    kubernetes.io/ingress.global-static-ip-name:  barnyard-url
 spec:
   rules:
   - host: register.pango.li

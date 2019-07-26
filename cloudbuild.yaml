@@ -32,20 +32,20 @@ steps:
     path: /root/.ssh
 
 # This step deploys the new version of our container image
-# in the ouroboros Kubernetes Engine cluster.
+# in the barnyard Kubernetes Engine cluster.
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
   args:
   - 'apply'
   - '-f'
-  - 'yap.yaml'
+  - 'barnyard.yaml'
   - '-f'
   - 'ouroboros.yaml'
   - '-f'
   - 'moo.yaml'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=ouroboros'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=barnyard'
 
 # This step copies the applied manifest to the production branch
 # The COMMIT_SHA variable is automatically
