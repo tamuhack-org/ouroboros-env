@@ -25,7 +25,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name:  yap-url
     networking.gke.io/managed-certificates: "moo-certificate,ouroboros-certificate"
-    kubernetes.io/ingress.allow-http: "false"
 spec:
   rules:
   - host: register.pango.li
