@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: barnyard-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name:  barnyard-url
+spec:
+  rules:
+  - host: register.tamuhack.com
+    http:
+      paths:
+      - backend:
+          serviceName: ouroboros-nodeport-service
+          servicePort: 9000
+  - host: tamuhack.com
+    http:
+      paths:
+      - backend:
+          serviceName: moo-nodeport-service
+          servicePort: 9001
