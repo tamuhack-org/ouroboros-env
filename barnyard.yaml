@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: tamuhack-prod-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name:  tmauhck-static-ip
+    kubernetes.io/ingress.global-static-ip-name:  tamuhack-static-ip
 spec:
   rules:
   - host: register.tamuhack.com
