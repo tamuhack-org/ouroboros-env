@@ -14,18 +14,18 @@ spec:
       containers:
       - name: moo-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-prod/moo:7a9cac8
+        image: gcr.io/tamuhack-prod/moo:be76be4
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
         livenessProbe:
           httpGet:
-            path: /healthy/
-            port: 8080
+            path: /
+            port: 3000
         readinessProbe:
           httpGet:
-            path: /healthy/
-            port: 8080
+            path: /
+            port: 3000
         env:
           - name: EVENTBRITE_TOKEN
             valueFrom:
@@ -44,6 +44,6 @@ spec:
   ports:
   - protocol: TCP
     port: 9001
-    targetPort: 8080
+    targetPort: 3000
   type: NodePort
  
