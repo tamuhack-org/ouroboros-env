@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: barnyard-ingress
+  name: tamuhack-prod-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name:  barnyard-url
+    kubernetes.io/ingress.global-static-ip-name:  tmauhck-static-ip
 spec:
   rules:
   - host: register.tamuhack.com
