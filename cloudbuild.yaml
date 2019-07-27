@@ -5,11 +5,11 @@ steps:
   args:
   - kms
   - decrypt
-  - --ciphertext-file=tamuhack.staging.id_rsa.enc
+  - --ciphertext-file=tamuhack-prod.id_rsa.enc
   - --plaintext-file=/root/.ssh/id_rsa
   - --location=global
-  - --keyring=tamuhack-staging-acct
-  - --key=ssh
+  - --keyring=tamuhack-prod-keyring
+  - --key=tamuhack-prod-key
   volumes:
   - name: 'ssh'
     path: /root/.ssh
@@ -45,7 +45,7 @@ steps:
   - 'moo.yaml'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=barnyard'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=tamuhack-prod-cluster'
 
 # This step copies the applied manifest to the production branch
 # The COMMIT_SHA variable is automatically
@@ -59,7 +59,7 @@ steps:
     set -x && \
     git remote add github git@github.com:tamuhack-org/snakeskin && \
     # Configure Git to create commits with TAMUhack staging
-    git config user.email tamuhack.staging@gmail.com && \
+    git config user.email khatri.florida@gmail.com && \
     # Switch to the production branch and copy the kubernetes.yaml file from the candidate branch
     git fetch github production && git checkout production && \
     git checkout $COMMIT_SHA ouroboros.yaml barnyard.yaml moo.yaml && \
