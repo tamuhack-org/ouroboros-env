@@ -59,7 +59,7 @@ steps:
     set -x && \
     git remote add github git@github.com:tamuhack-org/snakeskin && \
     # Configure Git to create commits with TAMUhack staging
-    git config user.email khatri.florida@gmail.com && \
+    git config user.email tamuhack.staging@gmail.com && \
     # Switch to the production branch and copy the kubernetes.yaml file from the candidate branch
     git fetch github production && git checkout production && \
     git checkout $COMMIT_SHA ouroboros.yaml barnyard.yaml moo.yaml && \
