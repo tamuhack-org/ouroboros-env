@@ -64,7 +64,7 @@ steps:
     git fetch github production && git checkout production && \
     git checkout $COMMIT_SHA ouroboros.yaml barnyard.yaml moo.yaml && \
     # Commit the kubernetes.yaml file with a descriptive commit message
-    git commit -m "Manifest from commit $COMMIT_SHA
+    git commit --allow-empty -m "Manifest from commit $COMMIT_SHA
     $(git log --format=%B -n 1 $COMMIT_SHA)" && \
     # Push the changes back to GitHub
     git push github production
