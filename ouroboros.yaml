@@ -14,7 +14,7 @@ spec:
       containers:
       - name: ouroboros-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-staging/ouroboros:12a4713
+        image: gcr.io/tamuhack-prod/ouroboros:69dd5af
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
@@ -56,7 +56,7 @@ spec:
       - image: gcr.io/cloudsql-docker/gce-proxy:1.05
         name: cloudsql-proxy
         command: ["/cloud_sql_proxy", "--dir=/cloudsql",
-                  "-instances=tamuhack-staging:us-central1:ouroboros=tcp:5432",
+                  "-instances=tamuhack-prod:us-central1:ouroboros=tcp:5432",
                   "-credential_file=/secrets/cloudsql/credentials.json"]
         volumeMounts:
           - name: cloudsql-oauth-credentials
