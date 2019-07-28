@@ -46,4 +46,3 @@ spec:
     port: 9001
     targetPort: 3000
   type: NodePort
- 
