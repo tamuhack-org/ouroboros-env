@@ -26,12 +26,6 @@ spec:
           requests:
             memory: 30M
             cpu: 5m
-        env:
-          - name: SLACK_URL
-            valueFrom:
-              secretKeyRef:
-                name: slack-url
-                key: url
       tolerations:
       - effect: NoSchedule
         key: node-role.kubernetes.io/master
