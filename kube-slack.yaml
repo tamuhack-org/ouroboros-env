@@ -20,6 +20,8 @@ spec:
         env:
         - name: SLACK_URL
           value: https://hooks.slack.com/services/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
+        - name: SLACK_USERNAME
+          value: kube-bot
         resources:
           requests:
             memory: 30M
