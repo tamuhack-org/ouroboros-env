@@ -14,7 +14,7 @@ spec:
       containers:
       - name: ouroboros-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-prod/ouroboros:ec3bcda
+        image: gcr.io/tamuhack-prod/ouroboros:474a06a
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
