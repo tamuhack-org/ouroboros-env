@@ -14,7 +14,7 @@ spec:
       containers:
       - name: moo-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-prod/moo:77daf16
+        image: gcr.io/tamuhack-prod/moo:5b6987b
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
