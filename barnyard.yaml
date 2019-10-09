@@ -10,7 +10,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: ouroboros-nodeport-service
+          serviceName: hiss-nodeport-service
           servicePort: 9000
   - host: tamuhack.com
     http:
