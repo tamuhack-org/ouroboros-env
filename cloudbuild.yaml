@@ -8,7 +8,7 @@ steps:
   - '-f'
   - 'barnyard.yaml'
   - '-f'
-  - 'ouroboros.yaml'
+  - 'hiss.yaml'
   - '-f'
   - 'moo.yaml'
   - '-f'
