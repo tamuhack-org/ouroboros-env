@@ -14,7 +14,7 @@ spec:
       containers:
       - name: hiss-app
         # Replace this with your project ID
-        image: gcr.io/tamuhack-prod/hiss:eb41e90
+        image: gcr.io/tamuhack-prod/hiss:e77fc70
         imagePullPolicy: Always
         env:
           - name: DATABASE_USER
